@@ -19,11 +19,6 @@ variable "regions" {
   default     = []
 }
 
-variable "network" {
-  description = "Network"
-  default     = ""
-}
-
 variable "public_subnets" {
   description = "A list of public subnets. The number of subnets must be same with count of regions"
   type        = "list"
