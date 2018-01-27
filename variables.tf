@@ -1,10 +1,10 @@
-variable "vpc_name" {
+variable "name" {
   description = "VPC name"
   type        = "string"
   default     = "default"
 }
 
-variable "vpc_desc" {
+variable "desc" {
   description = "Information of this vpc"
   type        = "string"
   default     = ""
