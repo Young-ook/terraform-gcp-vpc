@@ -1,4 +1,12 @@
-# VPC terraform module for Google Cloud Platform 
+# Google Cloud VPC
+A [Virtual Private Cloud (VPC)](https://cloud.google.com/vpc/docs/vpc) network is a virtual version of a physical network, implemented inside of Google's production network, using [Andromeda](https://www.usenix.org/system/files/conference/nsdi18/nsdi18-dalton.pdf). A VPC network provides the following:
+
+- Provides connectivity for your Compute Engine virtual machine (VM) instances, including Google Kubernetes Engine (GKE) clusters, App Engine flexible environment instances, and other Google Cloud products built on Compute Engine VMs.
+- Offers native Internal TCP/UDP Load Balancing and proxy systems for Internal HTTP(S) Load Balancing.
+- Connects to on-premises networks using Cloud VPN tunnels and Cloud Interconnect attachments.
+- Distributes traffic from Google Cloud external load balancers to backends.
+
+Projects can contain multiple VPC networks. Unless you create an organizational policy that prohibits it, new projects start with a default network (an auto mode VPC network) that has one subnetwork (subnet) in each region.
 
 ## Example
 
