@@ -1,19 +1,29 @@
+### input variables
+
+### network
+variable "vpc_config" {
+  description = "A Virtual Private Cloud (VPC) configuration"
+  default     = {}
+}
+
+### description
 variable "name" {
-  description = "VPC name"
-  type        = "string"
-  default     = "default"
+  description = "The logical name of the module instance"
+  type        = string
+  default     = null
 }
 
-variable "desc" {
-  description = "Information of this vpc"
-  type        = "string"
+variable "description" {
+  description = "Description of the module instance"
+  type        = string
   default     = ""
 }
 
-variable "project" {
-  description = "Project ID of gcp (if it's not provided, porject is defined in provider will be used)"
-  type        = "string"
-  default     = ""
+### tags
+variable "tags" {
+  description = "The key-value maps for tagging"
+  type        = map(string)
+  default     = {}
 }
 
 variable "automode" {
@@ -23,18 +33,18 @@ variable "automode" {
 
 variable "regions" {
   description = "A list of regions"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
 variable "public_subnets" {
   description = "A list of public subnets. The number of subnets must be same with count of regions"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
 variable "private_subnets" {
   description = "A list of private subnets. The number of subnets must be same with count of regions"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
