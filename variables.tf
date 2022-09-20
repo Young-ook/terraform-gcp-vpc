@@ -1,40 +1,45 @@
-variable "name" {
-  description = "VPC name"
-  type        = "string"
-  default     = "default"
-}
+### input variables
 
-variable "desc" {
-  description = "Information of this vpc"
-  type        = "string"
-  default     = ""
-}
-
-variable "project" {
-  description = "Project ID of gcp (if it's not provided, porject is defined in provider will be used)"
-  type        = "string"
-  default     = ""
-}
-
-variable "automode" {
-  description = "If you want to create vpc and subnets using automode"
-  default     = "false"
+### network
+variable "vpc_config" {
+  description = "A Virtual Private Cloud (VPC) configuration"
+  default     = {}
 }
 
 variable "regions" {
-  description = "A list of regions"
-  type        = "list"
+  description = "A list of regions to deploy VPC"
+  type        = list(string)
   default     = []
 }
 
 variable "public_subnets" {
   description = "A list of public subnets. The number of subnets must be same with count of regions"
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
 variable "private_subnets" {
   description = "A list of private subnets. The number of subnets must be same with count of regions"
-  type        = "list"
+  type        = list(string)
   default     = []
+}
+
+### description
+variable "name" {
+  description = "The logical name of the module instance"
+  type        = string
+  default     = null
+}
+
+variable "description" {
+  description = "Description of the module instance"
+  type        = string
+  default     = ""
+}
+
+### tags
+variable "tags" {
+  description = "The key-value maps for tagging"
+  type        = map(string)
+  default     = {}
 }
